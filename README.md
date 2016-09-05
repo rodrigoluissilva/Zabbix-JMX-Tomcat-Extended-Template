@@ -6,3 +6,5 @@ configure Macros
 {$CONNECTOR_MODE}
 {$HTTPS_PORT}
 {$HTTP_PORT}
+{$JMX_USERNAME}
+{$JMX_PASSWORD}
