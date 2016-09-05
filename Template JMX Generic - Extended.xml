@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-07-07T13:24:19Z</date>
+    <date>2016-09-05T09:50:02Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -2412,7 +2412,16 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                 </item>
             </items>
             <discovery_rules/>
-            <macros/>
+            <macros>
+                <macro>
+                    <macro>{$JMX_PASSWORD}</macro>
+                    <value>monitorPassword</value>
+                </macro>
+                <macro>
+                    <macro>{$JMX_USERNAME}</macro>
+                    <value>monitorRole</value>
+                </macro>
+            </macros>
             <templates/>
             <screens/>
         </template>
