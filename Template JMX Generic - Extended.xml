@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-09-05T09:50:02Z</date>
+    <date>2016-09-07T11:47:58Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -959,7 +959,7 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <history>7</history>
                     <trends>365</trends>
                     <status>0</status>
-                    <value_type>3</value_type>
+                    <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>B</units>
                     <delta>0</delta>
@@ -2423,7 +2423,301 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                 </macro>
             </macros>
             <templates/>
-            <screens/>
+            <screens>
+                <screen>
+                    <name>JMX Overview</name>
+                    <hsize>2</hsize>
+                    <vsize>7</vsize>
+                    <screen_items>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Heap Memory</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Non-Heap Memory</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>1</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Memory Pool CMS Old Gen</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>1</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Memory Pool CMS Perm Gen</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>2</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Memory Pool Code Cache</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>2</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Memory Pool Perm Gen</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>3</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Memory Pool PS Old Gen</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>3</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Memory Pool PS Perm Gen</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>4</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Memory Pool Tenured Gen</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>4</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Class Loader</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>5</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - File Descriptors</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>1</x>
+                            <y>5</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Garbage Collector collections per second</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>6</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>JMX - Threads</name>
+                                <host>Template JMX Generic - Extended</host>
+                            </resource>
+                            <max_columns>3</max_columns>
+                            <application/>
+                        </screen_item>
+                    </screen_items>
+                </screen>
+            </screens>
         </template>
     </templates>
     <triggers>
@@ -2508,7 +2802,9 @@ the amount of time spent in just-in-time (JIT) compilation</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.used].last(0)}&gt;({Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}*0.7)</expression>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)} &gt; 0&#13;
+and&#13;
+{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.used].last(0)} &gt; ({Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}*0.7)</expression>
             <name>70% Non-Heap Memory used on {HOST.NAME}</name>
             <url/>
             <status>0</status>
@@ -2732,7 +3028,7 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>AC8C14</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -2788,7 +3084,7 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>AC8C14</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -2912,18 +3208,6 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                 <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>0</drawtype>
-                    <color>1A7C11</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.committed]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
@@ -2931,6 +3215,18 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <item>
                         <host>Template JMX Generic - Extended</host>
                         <key>jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.max]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>1A7C11</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template JMX Generic - Extended</host>
+                        <key>jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2974,25 +3270,25 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.committed]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>1A7C11</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
                     <drawtype>0</drawtype>
-                    <color>1A7C11</color>
+                    <color>2774A4</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -3030,25 +3326,25 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.committed]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>1A7C11</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.max]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=CMS Perm Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
                     <drawtype>0</drawtype>
-                    <color>1A7C11</color>
+                    <color>2774A4</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -3086,25 +3382,25 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.committed]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>1A7C11</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
                     <drawtype>0</drawtype>
-                    <color>1A7C11</color>
+                    <color>2774A4</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -3142,25 +3438,25 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.committed]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>1A7C11</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.max]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Perm Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
                     <drawtype>0</drawtype>
-                    <color>1A7C11</color>
+                    <color>2774A4</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -3198,25 +3494,25 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.committed]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>1A7C11</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.max]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Old Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
                     <drawtype>0</drawtype>
-                    <color>1A7C11</color>
+                    <color>2774A4</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -3254,25 +3550,25 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.committed]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>1A7C11</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.max]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=PS Perm Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
                     <drawtype>0</drawtype>
-                    <color>1A7C11</color>
+                    <color>2774A4</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -3310,25 +3606,25 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.committed]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.max]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>1A7C11</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.max]</key>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Tenured Gen&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>2</sortorder>
                     <drawtype>0</drawtype>
-                    <color>1A7C11</color>
+                    <color>2774A4</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -3360,18 +3656,6 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                 <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>0</drawtype>
-                    <color>1A7C11</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JMX Generic - Extended</host>
-                        <key>jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.committed]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
                     <color>F63100</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
@@ -3379,6 +3663,18 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                     <item>
                         <host>Template JMX Generic - Extended</host>
                         <key>jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>1A7C11</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template JMX Generic - Extended</host>
+                        <key>jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -3428,7 +3724,7 @@ the amount of time spent in just-in-time (JIT) compilation</description>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>2774A4</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
