@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-09-07T13:27:32Z</date>
+    <date>2016-10-19T09:13:01Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -2151,7 +2151,7 @@ and&#13;
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=OperatingSystem&quot;,ProcessCpuLoad].last(0)}&gt;70</expression>
             <name>70% OperatingSystem Process CPU Load on {HOST.NAME}</name>
             <url/>
-            <status>0</status>
+            <status>1</status>
             <priority>3</priority>
             <description/>
             <type>0</type>
@@ -2229,7 +2229,7 @@ and&#13;
         </trigger>
         <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Runtime&quot;,Uptime].nodata(5m)}=1</expression>
-            <name>Runtime  on {HOST.NAME} is not reachable</name>
+            <name>{HOST.NAME} JMX Runtime  is not reachable</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -2239,7 +2239,7 @@ and&#13;
         </trigger>
         <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Runtime&quot;,Uptime].last()}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Runtime&quot;,Uptime].last(#2)}</expression>
-            <name>Runtime on {HOST.NAME} restarted</name>
+            <name>{HOST.NAME} JMX Runtime restarted</name>
             <url/>
             <status>0</status>
             <priority>1</priority>
@@ -2657,6 +2657,18 @@ and&#13;
                     <item>
                         <host>Template JMX Generic - Extended</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Metaspace&quot;,Usage.max]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>1A7C11</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template JMX Generic - Extended</host>
+                        <key>jmx[&quot;java.lang:type=MemoryPool,name=Metaspace&quot;,Usage.committed]</key>
                     </item>
                 </graph_item>
                 <graph_item>
