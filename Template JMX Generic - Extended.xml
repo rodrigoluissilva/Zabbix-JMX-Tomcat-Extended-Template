@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-10-19T09:13:01Z</date>
+    <date>2016-10-28T10:23:45Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -2096,8 +2096,8 @@ the amount of time spent in just-in-time (JIT) compilation</description>
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.used].last(0)}&gt;({Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.max].last(0)}*0.7)</expression>
-            <name>70% Heap Memory used on {HOST.NAME}</name>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=OperatingSystem&quot;,OpenFileDescriptorCount].last(0)}&gt;({Template JMX Generic - Extended:jmx[&quot;java.lang:type=OperatingSystem&quot;,MaxFileDescriptorCount].last(0)}*0.8)</expression>
+            <name>[{HOST.NAME}]  80% OperatingSystem Opened File Descriptor Count used</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -2106,8 +2106,18 @@ the amount of time spent in just-in-time (JIT) compilation</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max].last(0)}*0.7)</expression>
-            <name>70% MemoryPool CMS Old Gen used on {HOST.NAME}</name>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=OperatingSystem&quot;,ProcessCpuLoad].avg(10m)}&gt;80</expression>
+            <name>[{HOST.NAME}]  80% OperatingSystem Process CPU Load</name>
+            <url>https://docs.oracle.com/javase/7/docs/jre/api/management/extension/com/sun/management/OperatingSystemMXBean.html</url>
+            <status>0</status>
+            <priority>3</priority>
+            <description>Returns the &quot;recent cpu usage&quot; for the Java Virtual Machine process.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.used].last(0)}&gt;({Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.max].last(0)}*0.9)</expression>
+            <name>[{HOST.NAME}]  90% Heap Memory used</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -2116,8 +2126,18 @@ the amount of time spent in just-in-time (JIT) compilation</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.used].last(0)}&gt;({Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max].last(0)}*0.7)</expression>
-            <name>70% MemoryPool Code Cache used on {HOST.NAME}</name>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.used].last(0)}&gt;({Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max].last(0)}*0.9)</expression>
+            <name>[{HOST.NAME}]  90% MemoryPool CMS Old Gen used</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.used].last(0)}&gt;({Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max].last(0)}*0.9)</expression>
+            <name>[{HOST.NAME}]  90% MemoryPool Code Cache used</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -2128,8 +2148,8 @@ the amount of time spent in just-in-time (JIT) compilation</description>
         <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)} &gt; 0&#13;
 and&#13;
-{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.used].last(0)} &gt; ({Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}*0.7)</expression>
-            <name>70% Non-Heap Memory used on {HOST.NAME}</name>
+{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.used].last(0)} &gt; ({Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}*0.9)</expression>
+            <name>[{HOST.NAME}]  90% Non-Heap Memory used</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -2138,38 +2158,18 @@ and&#13;
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=OperatingSystem&quot;,OpenFileDescriptorCount].last(0)}&gt;({Template JMX Generic - Extended:jmx[&quot;java.lang:type=OperatingSystem&quot;,MaxFileDescriptorCount].last(0)}*0.7)</expression>
-            <name>70% OperatingSystem Opened File Descriptor Count used on {HOST.NAME}</name>
-            <url/>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionCount].avg(5m)}&gt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionCount].avg(5m)}</expression>
+            <name>[{HOST.NAME}]  GarbageCollector - Concurrent Mark Sweep in fire fighting mode</name>
+            <url>http://java-monitor.com/forum/showthread.php?t=173</url>
             <status>0</status>
             <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=OperatingSystem&quot;,ProcessCpuLoad].last(0)}&gt;70</expression>
-            <name>70% OperatingSystem Process CPU Load on {HOST.NAME}</name>
-            <url/>
-            <status>1</status>
-            <priority>3</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionCount].last(0)}</expression>
-            <name>GarbageCollector - Concurrent Mark Sweep in fire fighting mode on {HOST.NAME}</name>
-            <url/>
-            <status>0</status>
-            <priority>3</priority>
-            <description/>
+            <description>More expensive GC algorithm more often than the lesser expensive one, which usually seems to indicate that you should assign more memory to the JVM it is talking about.</description>
             <type>0</type>
             <dependencies/>
         </trigger>
         <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=Copy&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=MarkSweepCompact&quot;,CollectionCount].last(0)}</expression>
-            <name>GarbageCollector - Mark Sweep Compact in fire fighting mode on {HOST.NAME}</name>
+            <name>[{HOST.NAME}]  GarbageCollector - Mark Sweep Compact in fire fighting mode</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -2179,7 +2179,7 @@ and&#13;
         </trigger>
         <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=PS Scavenge&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=PS MarkSweep&quot;,CollectionCount].last(0)}</expression>
-            <name>GarbageCollector - PS Mark Sweep in fire fighting mode on {HOST.NAME}</name>
+            <name>[{HOST.NAME}]  GarbageCollector - PS Mark Sweep in fire fighting mode</name>
             <url>http://java-monitor.com/forum/showthread.php?t=173</url>
             <status>0</status>
             <priority>3</priority>
@@ -2189,39 +2189,9 @@ and&#13;
         </trigger>
         <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.committed].last(0)}={Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,HeapMemoryUsage.max].last(0)}</expression>
-            <name>Heap Memory fully committed on {HOST.NAME}</name>
+            <name>[{HOST.NAME}]  Heap Memory fully committed</name>
             <url/>
-            <status>1</status>
-            <priority>2</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.committed].last(0)}={Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max].last(0)}</expression>
-            <name>MemoryPool - CMS Old Gen fully committed on {HOST.NAME}</name>
-            <url/>
-            <status>1</status>
-            <priority>2</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.committed].last(0)}={Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max].last(0)}</expression>
-            <name>MemoryPool - Code Cache fully committed on {HOST.NAME}</name>
-            <url/>
-            <status>1</status>
-            <priority>2</priority>
-            <description/>
-            <type>0</type>
-            <dependencies/>
-        </trigger>
-        <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.committed].last(0)}={Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}</expression>
-            <name>Non-Heap Memory fully committed on {HOST.NAME}</name>
-            <url/>
-            <status>1</status>
+            <status>0</status>
             <priority>2</priority>
             <description/>
             <type>0</type>
@@ -2229,7 +2199,7 @@ and&#13;
         </trigger>
         <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Runtime&quot;,Uptime].nodata(5m)}=1</expression>
-            <name>{HOST.NAME} JMX Runtime  is not reachable</name>
+            <name>[{HOST.NAME}] JMX Runtime  is not reachable</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -2239,7 +2209,7 @@ and&#13;
         </trigger>
         <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Runtime&quot;,Uptime].last()}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Runtime&quot;,Uptime].last(#2)}</expression>
-            <name>{HOST.NAME} JMX Runtime restarted</name>
+            <name>[{HOST.NAME}] JMX Runtime restarted</name>
             <url/>
             <status>0</status>
             <priority>1</priority>
@@ -2248,8 +2218,38 @@ and&#13;
             <dependencies/>
         </trigger>
         <trigger>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.committed].last(0)}={Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=CMS Old Gen&quot;,Usage.max].last(0)}</expression>
+            <name>[{HOST.NAME}]  MemoryPool - CMS Old Gen fully committed</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.committed].last(0)}={Template JMX Generic - Extended:jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max].last(0)}</expression>
+            <name>[{HOST.NAME}]  MemoryPool - Code Cache fully committed</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.committed].last(0)}={Template JMX Generic - Extended:jmx[&quot;java.lang:type=Memory&quot;,NonHeapMemoryUsage.max].last(0)}</expression>
+            <name>[{HOST.NAME}]  Non-Heap Memory fully committed</name>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Runtime&quot;,VmName].str(Server)}&lt;&gt;1</expression>
-            <name>{HOST.NAME} runs suboptimal VM type</name>
+            <name>[{HOST.NAME}] runs suboptimal VM type</name>
             <url/>
             <status>0</status>
             <priority>1</priority>
@@ -2259,7 +2259,7 @@ and&#13;
         </trigger>
         <trigger>
             <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=Compilation&quot;,Name].str(Client)}=1</expression>
-            <name>{HOST.NAME} uses suboptimal JIT compiler</name>
+            <name>[{HOST.NAME}] uses suboptimal JIT compiler</name>
             <url/>
             <status>0</status>
             <priority>1</priority>
