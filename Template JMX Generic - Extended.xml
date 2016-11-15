@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-10-28T10:23:45Z</date>
+    <date>2016-11-15T17:12:02Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -2158,32 +2158,38 @@ and&#13;
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionCount].avg(5m)}&gt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionCount].avg(5m)}</expression>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionCount].last(#1)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionCount].last(#1)}&#13;
+and&#13;
+{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ParNew&quot;,CollectionCount].last(#2)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=ConcurrentMarkSweep&quot;,CollectionCount].last(#2)}</expression>
             <name>[{HOST.NAME}]  GarbageCollector - Concurrent Mark Sweep in fire fighting mode</name>
-            <url>http://java-monitor.com/forum/showthread.php?t=173</url>
+            <url>https://blog.svedr.in/posts/problem-gc-concurrent-mark-sweep-in-fire-fighting-mode.html</url>
             <status>0</status>
-            <priority>3</priority>
+            <priority>2</priority>
             <description>More expensive GC algorithm more often than the lesser expensive one, which usually seems to indicate that you should assign more memory to the JVM it is talking about.</description>
             <type>0</type>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=Copy&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=MarkSweepCompact&quot;,CollectionCount].last(0)}</expression>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=Copy&quot;,CollectionCount].last(#1)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=MarkSweepCompact&quot;,CollectionCount].last(#1)}&#13;
+and&#13;
+{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=Copy&quot;,CollectionCount].last(#2)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=MarkSweepCompact&quot;,CollectionCount].last(#2)}</expression>
             <name>[{HOST.NAME}]  GarbageCollector - Mark Sweep Compact in fire fighting mode</name>
-            <url/>
+            <url>https://blog.svedr.in/posts/problem-gc-concurrent-mark-sweep-in-fire-fighting-mode.html</url>
             <status>0</status>
-            <priority>3</priority>
-            <description/>
+            <priority>2</priority>
+            <description>More expensive GC algorithm more often than the lesser expensive one, which usually seems to indicate that you should assign more memory to the JVM it is talking about.</description>
             <type>0</type>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=PS Scavenge&quot;,CollectionCount].last(0)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=PS MarkSweep&quot;,CollectionCount].last(0)}</expression>
+            <expression>{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=PS Scavenge&quot;,CollectionCount].last(#1)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=PS MarkSweep&quot;,CollectionCount].last(#1)}&#13;
+and&#13;
+{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=PS Scavenge&quot;,CollectionCount].last(#2)}&lt;{Template JMX Generic - Extended:jmx[&quot;java.lang:type=GarbageCollector,name=PS MarkSweep&quot;,CollectionCount].last(#2)}</expression>
             <name>[{HOST.NAME}]  GarbageCollector - PS Mark Sweep in fire fighting mode</name>
-            <url>http://java-monitor.com/forum/showthread.php?t=173</url>
+            <url>https://blog.svedr.in/posts/problem-gc-concurrent-mark-sweep-in-fire-fighting-mode.html</url>
             <status>0</status>
-            <priority>3</priority>
-            <description/>
+            <priority>2</priority>
+            <description>More expensive GC algorithm more often than the lesser expensive one, which usually seems to indicate that you should assign more memory to the JVM it is talking about.</description>
             <type>0</type>
             <dependencies/>
         </trigger>
